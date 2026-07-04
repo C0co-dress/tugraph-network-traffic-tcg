@@ -1,12 +1,12 @@
-# 安全通论实验 3：网络流量分类
+# 安全通论实验 3：HCG 图网络流量分类
 
-本目录包含基于 `IP Network Traffic Flows Labeled with 75 Apps` 数据集的网络流量分类实验。
+本目录包含基于 `IP Network Traffic Flows Labeled with 75 Apps` 数据集的 HCG（Host Communication Graph）网络流量分类实验。
 
 核心流水线：
 
 1. 从原始 CSV 抽样应用层协议类别。
-2. 生成两类 TuGraph 图数据：HCG 与 TCG。
-3. 基于图邻接矩阵生成节点/边嵌入，并与原始流统计特征融合。
+2. 构建 HCG 图数据（以 IP 端点为节点、通信关系为边）。
+3. 基于图邻接矩阵生成 Node2Vec 嵌入，并与原始流统计特征融合。
 4. 训练 Decision Tree、KNN、Random Forest 和 PyTorch MLP。
 5. 使用 TensorBoard 监控 MLP 训练进度。
 
@@ -44,21 +44,4 @@ TuGraph 文件在 `tugraph_import/`。如果 Docker 可用，可尝试：
 
 ```powershell
 .\scripts\run_tugraph_docker.ps1
-```
-
-## HCG 作业三本地复现
-
-HCG 图网络流量分类报告和复现入口已经本地化，便于推送到个人 Git 仓库后提交。
-
-关键文件：
-
-- `scripts/run_hcg_local.py`：HCG-only 复现入口，构建 A/B/C 特征并训练 3 个分类器。
-- `docs/hcg_local_reproduction.md`：本地复现说明。
-- `reports/安全通论实验3-HCG图网络流量分类实验报告.md`：Markdown 报告。
-- `reports/林源卿2023312350安全通论实验报告3-HCG图网络流量分类.docx`：Word 报告。
-
-运行 HCG-only 实验：
-
-```powershell
-python scripts\run_hcg_local.py --scan-rows 600000 --top-classes 10 --samples-per-class 5000
 ```
