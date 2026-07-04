@@ -49,3 +49,4 @@ docs/
 
 # Non-HCG scripts
 scripts/run_hcg_local.py
+scripts/create_tcg_docx.js
