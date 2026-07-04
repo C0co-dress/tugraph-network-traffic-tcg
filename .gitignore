@@ -84,3 +84,6 @@ scripts/create_tcg_docx.*
 reports/
 docs/
 *.joblib
+# Generated report figures (already embedded in DOCX)
+outputs/*/report_fig_*.png
+scripts/render_tcg_report_figures.py
