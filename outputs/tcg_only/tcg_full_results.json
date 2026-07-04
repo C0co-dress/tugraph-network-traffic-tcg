@@ -1,0 +1,99 @@
+{
+  "config": {
+    "scan_rows": 600000,
+    "top_classes": 10,
+    "samples_per_class": 5000,
+    "embedding_dim": 16,
+    "test_size": 0.2,
+    "random_state": 42,
+    "epochs": 50,
+    "batch_size": 512,
+    "causal_window_seconds": 60
+  },
+  "tcg_edge_counts": {
+    "CR": 445,
+    "PR": 23920,
+    "DHR": 35472,
+    "SHR": 6122
+  },
+  "results": {
+    "Raw": {
+      "DecisionTree": {
+        "accuracy": 0.6654,
+        "precision_weighted": 0.6690269967379788,
+        "recall_weighted": 0.6654,
+        "f1_weighted": 0.6667079081320325
+      },
+      "KNN": {
+        "accuracy": 0.6166,
+        "precision_weighted": 0.6118135161583368,
+        "recall_weighted": 0.6166,
+        "f1_weighted": 0.613211922110488
+      },
+      "RandomForest": {
+        "accuracy": 0.7247,
+        "precision_weighted": 0.7231034838950743,
+        "recall_weighted": 0.7247,
+        "f1_weighted": 0.7232479937562014
+      },
+      "MLP": {
+        "accuracy": 0.5872,
+        "precision_weighted": 0.5881945206097473,
+        "recall_weighted": 0.5872,
+        "f1_weighted": 0.5830442845966458
+      }
+    },
+    "TCG": {
+      "DecisionTree": {
+        "accuracy": 0.4867,
+        "precision_weighted": 0.4945415773032837,
+        "recall_weighted": 0.4867,
+        "f1_weighted": 0.4883261099718393
+      },
+      "KNN": {
+        "accuracy": 0.321,
+        "precision_weighted": 0.3161662536667807,
+        "recall_weighted": 0.321,
+        "f1_weighted": 0.31758019969011875
+      },
+      "RandomForest": {
+        "accuracy": 0.4999,
+        "precision_weighted": 0.5101854447326749,
+        "recall_weighted": 0.4999,
+        "f1_weighted": 0.4971835710788502
+      },
+      "MLP": {
+        "accuracy": 0.3289,
+        "precision_weighted": 0.3047535484160839,
+        "recall_weighted": 0.3289,
+        "f1_weighted": 0.279343166963924
+      }
+    },
+    "Raw+TCG": {
+      "DecisionTree": {
+        "accuracy": 0.713,
+        "precision_weighted": 0.711396169753355,
+        "recall_weighted": 0.713,
+        "f1_weighted": 0.7115254184758548
+      },
+      "KNN": {
+        "accuracy": 0.5324,
+        "precision_weighted": 0.5269660773854964,
+        "recall_weighted": 0.5324,
+        "f1_weighted": 0.5286727373971088
+      },
+      "RandomForest": {
+        "accuracy": 0.775,
+        "precision_weighted": 0.7745265960911644,
+        "recall_weighted": 0.775,
+        "f1_weighted": 0.7736295640473925
+      },
+      "MLP": {
+        "accuracy": 0.6152,
+        "precision_weighted": 0.6152332533759146,
+        "recall_weighted": 0.6152,
+        "f1_weighted": 0.611826952214119
+      }
+    }
+  }
+}
